@@ -1,0 +1,35 @@
+** CALCULATOR Guides:
+
+[1] How to declare a text area ?
+<input type="text" id="textField" readonly>
+Without closing tag it works. "readonly" makes it uneditable
+
+[2] How to display value in a text field ?
+document.querySelector('#textField').value='8';
+
+[3] How to write inline javascript ?
+<button class="button" onclick="
+  currentDisplay = currentDisplay + '4';
+  document.querySelector('#textField').value= currentDisplay;
+">4</button>
+<script>
+  let currentDisplay=' ';
+</script>
+
+[4] How to decorate text field ?
+#textField {
+  margin: 10px;
+  width: 85%;
+}
+"margin: 10px;" means charo aor se 10px ka jagah chhodega.
+"width: 85%;" means div ke width ka 85% width occupy karega.
+
+[5] How to prepare a responsive layout for buttons ?
+.buttonDiv { 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+"flex" stands for flexible.
+"display: flex" means buttons sud be flexible n responsive, will automatically wrap in next line if they already have eaten up all the horizontal allotted space.
+" justify-content: center;" is applicable only for flex and grid containers. 
