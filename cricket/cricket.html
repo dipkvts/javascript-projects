@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cricket game</title>
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>BAT BALL STUMP GAME</h1><br><br>
+  <button onclick="
+    let computerMove = getComputerResponse();
+    let result = getResult('bat', computerMove);
+    displayAlert('bat', computerMove, result);
+  ">Bat</button>
+  <button onclick="
+    computerMove = getComputerResponse();
+    result = getResult('ball', computerMove);
+    displayAlert('ball', computerMove, result);
+  ">Ball</button>
+  <button onclick="
+    computerMove = getComputerResponse();
+    result = getResult('stump', computerMove);
+    displayAlert('stump', computerMove, result);
+  ">Stump</button> 
+</body>
+<script>
+  function getComputerResponse() {
+    let randomNum = Math.random()*3;
+    if(randomNum >0 && randomNum<1)
+      return 'bat';
+    else if(randomNum>1 && randomNum<2)
+      return 'ball';
+    else
+      return 'stump';
+  }
+  function getResult(userMove, computerMove) {
+    if(userMove==='bat') {
+      if(computerMove==='bat')
+        return 'Its a Tie';
+      else if(computerMove==='ball')
+        return 'You won';
+      else
+        return 'Computer won';
+    } else if(userMove==='ball') {
+        if(computerMove==='bat')
+          return 'Computer won';
+        else if(computerMove==='ball')
+          return 'Its a Tie';
+        else
+          return 'You won';
+    } else {
+        if(computerMove==='bat')
+            return 'Computer won';
+          else if(computerMove==='ball')
+            return 'You won';
+          else
+            return 'Its a Tie';
+    }
+  }
+  function displayAlert(userMove, computerMove, result) {
+    alert(`Your move is ${userMove}, computer move is ${computerMove}, result is ${result}`)
+  }
+</script>
+</html>
